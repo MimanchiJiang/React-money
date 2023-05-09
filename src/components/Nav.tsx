@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { NavLink, Routes, Route } from "react-router-dom";
-require("icons/chart.svg");
-require("icons/money.svg");
-require("icons/tags.svg");
+import Icons from "./Icons";
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -28,21 +26,17 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <svg className="icon">
-            <use xlinkHref="#tags"></use>
-          </svg>
+          <Icons name="tags"></Icons>
           <NavLink to="tags">标签页</NavLink>
         </li>
         <li>
-          <svg className="icon">
-            <use xlinkHref="#money"></use>
-          </svg>
+          <Icons name="money"></Icons>
+
           <NavLink to="money"> 记账页</NavLink>
         </li>
         <li>
-          <svg className="icon">
-            <use xlinkHref="#chart"></use>
-          </svg>
+          <Icons name="chart"></Icons>
+
           <NavLink to="statistic">统计页</NavLink>
         </li>
       </ul>
