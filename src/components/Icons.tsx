@@ -1,7 +1,3 @@
-require("icons/chart.svg");
-require("icons/money.svg");
-require("icons/tags.svg");
-
 let importAll = (requireContext: __WebpackModuleApi.RequireContext) =>
   requireContext.keys().forEach(requireContext);
 try {

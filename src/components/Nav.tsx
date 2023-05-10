@@ -10,10 +10,8 @@ const NavWrapper = styled.nav`
     > li {
       width: 33.3%;
       text-align: center;
-      display: flex;
       padding: 4px 0;
-      flex-direction: column;
-      align-items: center;
+
       .icon {
         width: 24px;
         height: 24px;
@@ -21,23 +19,36 @@ const NavWrapper = styled.nav`
     }
   }
 `;
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const Nav = () => {
   return (
     <NavWrapper>
       <ul>
         <li>
-          <Icons name="tags"></Icons>
-          <NavLink to="tags">标签页</NavLink>
+          <NavLink to="/tags">
+            <LinkWrapper>
+              <Icons name="tags"></Icons>
+              <span>标签页</span>
+            </LinkWrapper>
+          </NavLink>
         </li>
         <li>
-          <Icons name="money"></Icons>
-
-          <NavLink to="money"> 记账页</NavLink>
+          <NavLink to="/money">
+            <LinkWrapper>
+              <Icons name="money"></Icons>记账页
+            </LinkWrapper>
+          </NavLink>
         </li>
         <li>
-          <Icons name="chart"></Icons>
-
-          <NavLink to="statistic">统计页</NavLink>
+          <NavLink to="/statistic">
+            <LinkWrapper>
+              <Icons name="chart"></Icons>统计页
+            </LinkWrapper>
+          </NavLink>
         </li>
       </ul>
     </NavWrapper>
