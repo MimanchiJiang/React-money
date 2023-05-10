@@ -11,7 +11,10 @@ const NavWrapper = styled.nav`
       width: 33.3%;
       text-align: center;
       padding: 4px 0;
-
+      .nav-active {
+        color: red;
+        fill: red;
+      }
       .icon {
         width: 24px;
         height: 24px;
@@ -23,13 +26,18 @@ const LinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:active {
+  }
 `;
 const Nav = () => {
   return (
     <NavWrapper>
       <ul>
         <li>
-          <NavLink to="/tags">
+          <NavLink
+            to="/tags"
+            className={({ isActive }) => (isActive ? "nav-active" : void 0)}
+          >
             <LinkWrapper>
               <Icons name="tags"></Icons>
               <span>标签页</span>
@@ -37,14 +45,20 @@ const Nav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/money">
+          <NavLink
+            to="/money"
+            className={({ isActive }) => (isActive ? "nav-active" : void 0)}
+          >
             <LinkWrapper>
               <Icons name="money"></Icons>记账页
             </LinkWrapper>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/statistic">
+          <NavLink
+            to="/statistic"
+            className={({ isActive }) => (isActive ? "nav-active" : void 0)}
+          >
             <LinkWrapper>
               <Icons name="chart"></Icons>统计页
             </LinkWrapper>
